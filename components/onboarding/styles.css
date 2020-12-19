@@ -1,0 +1,158 @@
+@font-face {
+  font-family: 'Armin grotesk';
+  src: url('https://uploads-ssl.webflow.com/5cd9e2d4b48aaba7d9170ade/5cede99b6352fca1026ec065_Armin%20Grotesk%20Normal.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Armin grotesk';
+  src: url('https://uploads-ssl.webflow.com/5cd9e2d4b48aaba7d9170ade/5cede99b73d1e308a5b9fe23_Armin%20Grotesk%20Normal%20Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Armin grotesk semi';
+  src: url('https://uploads-ssl.webflow.com/5cd9e2d4b48aaba7d9170ade/5cede99b6352fce8916ec068_Armin%20Grotesk%20Semi%20Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Armin grotesk semi';
+  src: url('https://uploads-ssl.webflow.com/5cd9e2d4b48aaba7d9170ade/5cede99b6352fcf1316ec067_Armin%20Grotesk%20Semi%20Bold%20Italic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+body {
+  margin: 0;
+}
+
+.onboarding-section {
+  position: relative;
+  width: 100%;
+  background-image: linear-gradient(red, yellow, blue);
+  background-image: linear-gradient(rgba(129,226,199,0), rgba(129,226,199,1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.onboarding-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1272px;
+  padding: 0 36px;
+  z-index: 10;
+}
+
+.onboarding-anim_cont {
+  width: 50%;
+  margin-right: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#lottie-cont {
+  width: 420px;
+  height: 420px;
+}
+
+#lottie-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+}
+
+.onboarding-text_cont {
+  padding: 72px 0;
+  width: 50%;
+}
+
+.onboarding-header_main {
+  font-family: "Armin grotesk semi";
+  margin: 0;
+  color: #182B3A;
+  font-size: 32px;
+  line-height: 38px;
+  margin-bottom: 60px;
+}
+
+.onboarding-header {
+  font-family: "Armin grotesk semi";
+  margin: 0;
+  color: #182B3A;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 16px;
+}
+
+.onboarding-text {
+  font-family: "Armin grotesk";
+  margin: 0;
+  color: #616975;
+  font-size: 18px;
+  height: 120px;
+  width: 100%;
+}
+
+.onboarding-button_cont {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.onboarding-button {
+  background-color: white;
+  cursor: pointer;
+  height: 18px;
+  margin-right: 24px;
+  flex: 1 1 auto;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.onboarding-button:last-child {
+  margin: 0;
+}
+
+.onboarding-button_selected {
+  background-color: #19BD9B;
+}
+
+@media only screen and (max-width: 767px) {
+  .onboarding-anim_cont {
+    display: none;
+  }
+
+  .onboarding-text_cont {
+    width: 100%;
+  }
+
+  .onboarding-header_main {
+    font-size: 24px;
+    margin-bottom: 36px;
+  }
+
+  .onboarding-header {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .onboarding-text {
+    font-size: 12px;
+    line-height: 14px;
+    height: 80px;
+  }
+
+  .onboarding-button {
+    height: 14px;
+  }
+
+}

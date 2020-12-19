@@ -1,0 +1,128 @@
+<head>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.7/lottie.js"></script>
+<link rel="stylesheet" href="https://www.emberfund.io/components/onboarding/styles.css">
+</head>
+
+<body>
+  <div class="onboarding-section">
+    <div id="lottie-background"></div>
+    <div class="onboarding-center">
+      <div class="onboarding-anim_cont">
+        <div id="lottie-cont"></div>
+      </div>
+      <div class="onboarding-text_cont">
+        <h3 class="onboarding-header_main">Getting Started</h3>
+        <h1 class="onboarding-header"></h1>
+        <p class="onboarding-text"></p>
+        <div class="onboarding-button_cont">
+          <div id="onboarding-button1" class="onboarding-button onboarding-button_selected" onclick="click1()"></div>
+          <div id="onboarding-button2" class="onboarding-button" onclick="click2()"></div>
+          <div id="onboarding-button3" class="onboarding-button" onclick="click3()"></div>
+          <div id="onboarding-button4" class="onboarding-button" onclick="click4()"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+  var data = [
+   {
+     header: "Select",
+     text: "Choose from a variety of curated cryptocurrency funds managed by industry experts and quantitative analysts.",
+     anim: "https://www.emberfund.io/components/onboarding/animations/ob-icon1.json",
+   },
+   {
+     header: "Deposit",
+     text: "Deposit using your bank account, Coinbase account, or use Bitcoin.",
+     anim: "https://www.emberfund.io/components/onboarding/animations/ob-icon2.json",
+   },
+   {
+     header: "Rebalance",
+     text: "Automatically rebalance your portfolio to follow fund managers or algorithms run by industry leading quantitative analysts.",
+     anim: "https://www.emberfund.io/components/onboarding/animations/ob-icon3.json",
+   },
+   {
+     header: "Track and Sell",
+     text: "Track your positions and instantly sell your portfolio into Bitcoin in just one tap at any time.",
+     anim: "https://www.emberfund.io/components/onboarding/animations/ob-icon4.json",
+   },
+  ];
+
+  var selected = 0;
+  var animation;
+
+  $( document ).ready(function() {
+    $(".onboarding-header").html(data[selected].header);
+    $(".onboarding-text").html(data[selected].text);
+    animation = lottie.loadAnimation({
+      container: document.getElementById("lottie-cont"),
+      renderer: 'svg',
+      loop: false,
+      autoplay: false,
+      path: data[selected].anim
+    });
+    animation.play();
+    $("#lottie-cont").fadeOut(0).fadeIn(300);
+    background = lottie.loadAnimation({
+      container: document.getElementById("lottie-background"),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: "https://www.emberfund.io/components/onboarding/animations/background.json",
+      rendererSettings: {
+      	preserveAspectRatio: 'none'
+      }
+    });
+  });
+
+  function click1() {
+    $(".onboarding-button_selected").removeClass("onboarding-button_selected");
+    selected = 0;
+    swap();
+    $("#onboarding-button1").toggleClass("onboarding-button_selected");
+  }
+
+  function click2() {
+    $(".onboarding-button_selected").removeClass("onboarding-button_selected");
+    selected = 1;
+    swap();
+    $("#onboarding-button2").toggleClass("onboarding-button_selected");
+  }
+
+  function click3() {
+    $(".onboarding-button_selected").removeClass("onboarding-button_selected");
+    selected = 2;
+    swap();
+    $("#onboarding-button3").toggleClass("onboarding-button_selected");
+  }
+
+  function click4() {
+    $(".onboarding-button_selected").removeClass("onboarding-button_selected");
+    selected = 3;
+    swap();
+    $("#onboarding-button4").toggleClass("onboarding-button_selected");
+  }
+
+  function swap() {
+    $(".onboarding-header").fadeOut(0);
+    $(".onboarding-text").fadeOut(0);
+    $(".onboarding-header").html(data[selected].header);
+    $(".onboarding-text").html(data[selected].text);
+    animation.destroy();
+    animation = lottie.loadAnimation({
+      container: document.getElementById("lottie-cont"),
+      renderer: 'svg',
+      loop: false,
+      autoplay: false,
+      path: data[selected].anim
+    });
+    animation.play();
+    $("#lottie-cont").fadeOut(0).fadeIn(300);
+    $(".onboarding-header").fadeIn(300);
+    $(".onboarding-text").fadeIn(300);
+  }
+
+</script>

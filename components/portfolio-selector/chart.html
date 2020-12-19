@@ -1,0 +1,59 @@
+<head>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+<link rel="stylesheet" href="cryptocurrency-icons/cryptocurrency-icons.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1 id="standard-header">Our Funds</h1>
+  <h1 id="portfolio-header"></h1>
+  <div class="wide">
+    <div id="button-container" class="button-container">
+    </div>
+    <div class="icon-arrow" onclick='leftArrow()' >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="36" viewBox="0 0 24 37">
+        <g id="Group_109" data-name="Group 109" transform="translate(-298 -9140)">
+          <path id="Path_179" data-name="Path 179" d="M1587.715,507.578l14.147,14.147-4.926,4.926-19.073-19.073,19.073-19.073,4.926,4.926Z" transform="translate(-1279.862 8651.495)"/>
+        </g>
+      </svg>
+    </div>
+    <div class="chart">
+      <div class="chart-graph">
+        <canvas id="chart-canvas"></canvas>
+        <div id="chart-center" class="chart-center" style="display:none;">
+          <h1 id="portfolio-growth" class="">+5.26%</h1>
+          <div class="chart-center--buttons">
+            <p id="button-1m" class="button" onclick="performanceSelect()">1M</p>
+            <p id="button-3m" class="button" onclick="performanceSelect()">3M</p>
+            <p id="button-ytd" class="button" onclick="performanceSelect()">YTD</p>
+          </div>
+        </div>
+        <div id="chart-labels" class="chart-labels">
+          <div id="ch1lab1" class="chart-label">
+            <div class="chart-label--icon"></div>
+            <h1>Bitcoin (BTC)</h1>
+            <p>60.9%</p>
+          </div>
+        </div>
+      </div>
+      <div class="chart-bottom">
+        <p id="portfolio-coverage"></p>
+        <p id="portfolio-deposit"></p>
+      </div>
+    </div>
+    <div class="icon-arrow" onclick='rightArrow()'>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="36" viewBox="0 0 24 37">
+        <path id="Path_109" data-name="Path 109" d="M1592.01,507.578l-14.148,14.148,4.926,4.926,19.074-19.074L1582.789,488.5l-4.926,4.926Z" transform="translate(-1577.862 -488.505)"/>
+      </svg>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <!-- <p id="portfolio-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci ac auctor augue mauris augue neque. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin. Nisl nisi
+    scelerisque eu ultrices. Nam aliquam sem et tortor consequat id porta. Integer vitae justo eget magna fermentum iaculis eu non. Urna neque viverra justo nec ultrices dui sapien
+  </p> -->
+</body>
+
+<script type="text/javascript" src="scripts.js"></script>
